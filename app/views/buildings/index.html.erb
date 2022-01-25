@@ -1,0 +1,135 @@
+
+<div class="dashboard_index">
+ 
+ <% unless current_user.full_profile? %>
+  <div class="contents_center_box">
+    <h2>まずは、あなたの基本情報を登録しましょう！</h2>
+    <p>WORKS REPORTは、現場のムダをなくすためのサービスです！</p>
+    <%= link_to "基本情報を登録する", edit_user_path(current_user), { class: "btn_link" } %>
+  </div>
+ <% else %>
+
+ 
+ <!-- 左側リストビュー-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+      <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/buildings',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+    
+   
+  </div>
+   <!-- 左側リストビュー終了-->
+   
+ 
+ <div class="right_dashboard_index">
+  
+  <div class=“form_bottom_area_top”>
+     <%= link_to '物件の新規登録', '/buildings/new' ,class:"form_bottom" %>
+  </div>
+  
+  <div class="status_title"> 
+    <h3>管理物件一覧</h3>
+   </div>
+    
+  <div class="dashboard_status approval">
+   
+   
+   <table class="dd_index_table">
+
+     <tr class="dashboard_bar">
+       <th class="dashboard_bar_1">登録日</th>
+       <th class="dashboard_bar_2">物件名</th>
+       <th class="dashboard_bar_3">物件住所</th>
+       <th class="dashboard_bar_4">旧物件名</th>
+       <th class="dashboard_bar_5">物件情報</th>
+       <th class="dashboard_bar_6">ステータス</th>
+       <th class="dashboard_bar_7">備考</th>
+     </tr>
+   
+   <% @buildings.each do |building| %>
+  
+     <tr class="dashboard_list">
+       <td><%= building.created_at.strftime('%Y/%m/%d') %></td>
+       <td><%= building.building_c %></td>
+       <td><%= building.subject %></td>
+       <td><%= building.building_c_property %></td>
+       <td><%= building.working_date&.strftime('%Y/%m/%d') %></td>
+       <td><%= building.status %></td>
+       <td><%= link_to "詳細",building_path(building.id), method: :get, class: :a_decoration_line %></td>
+     </tr>
+   <% end %>
+   </table>
+   
+  </div>
+  
+  
+  </div>
+  
+ </div>
+
+</div>
+
+<% end %>

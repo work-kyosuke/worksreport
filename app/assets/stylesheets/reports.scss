@@ -1,0 +1,383 @@
+// Place all the styles related to the reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* dashboard 重要 =============================== */
+
+.dashboard {
+  background-color: #F9F9F9;
+  margin-top: 20px;
+  display: flex;
+}
+
+.dashboard_index {
+  margin-right: 30px;
+  background-color: #F9F9F9;
+  margin-top: 20px;
+  display: flex;
+}
+
+
+/* dashboard left =============================== */
+
+.left_dashboard {
+  margin-top: 80px;
+  height: 100vh;
+  width: 300px;
+  box-shadow: 1px 1px 1px #B3B3B3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #F9F9F9;
+}
+
+.left_dashboard_list {
+  padding-top: 30px;
+}
+
+.left_dashboard_list li {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -20px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;/*角の丸み*/
+}
+
+.left_dashboard_list li:hover {
+  background-color: #F2F3F5;
+  font-weight: bold;
+}
+
+.left_dashboard_list a {
+  margin-left: 10px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.left_dashboard_list span {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #45494b;
+}
+
+.dashboard_icon {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 22px;
+  height: 22px;
+}
+
+.current {
+  background-color: #F2F3F5;
+  font-weight: bold;
+}
+
+
+
+/* dashboard 右側ビュー =============================== */
+
+.right_dashboard {
+  width: 100%;
+  margin-left: 300px;
+  margin-top: 80px;
+}
+
+.right_dashboard_index {
+  margin-right: 30px;
+  width: 100%;
+  margin-left: 300px;
+  margin-top: 80px;
+}
+
+
+.no-profile {
+  text-align: center;
+  margin-top: 300px;
+}
+
+/* dashboard 右側ビュー　テーブル部分↓ =============================== */
+
+.dashboard_status {
+  width: 100%;
+  padding-left: 30px;
+  margin-top: 20px;
+  background-color: white;
+  margin-right: 30px;
+  margin-left: 30px;
+  min-height: 350px;
+  border-radius: 5px;/*角の丸み*/
+}
+
+.dashboard_status h3 {
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: normal;
+  border-bottom-color: #B3B3B3;
+}
+
+.status_title_not {
+  margin-top: 20px;
+}
+
+.status_title {
+  margin-left: 30px;
+}
+
+.status_title_2 {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.dd_index_table {
+  padding-top: 30px;
+  margin-right: 30px;
+  padding-bottom: 20px;
+  background-color: white;
+  
+}
+
+.dashboard_bar {
+  background-color: #A3C5DA;
+  color: white;
+  height: 50px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.dashboard_bar th {
+  padding: 10px;
+}
+
+.dashboard_bar_1 {
+  width: 10%;
+  min-width: 150px;
+}
+
+.dashboard_bar_2 {
+  width: 30%;
+  min-width: 150px;
+
+}
+
+.dashboard_bar_3 {
+  width: 30%;
+  min-width: 150px;
+}
+
+.dashboard_bar_4 {
+  width: 10%;
+  min-width: 150px;
+}
+
+.dashboard_bar_5 {
+  width: 10%;
+  min-width: 150px;
+}
+
+.dashboard_bar_6 {
+  width: 10%;
+  min-width: 150px;
+}
+
+.dashboard_bar_7 {
+  width: 5%;
+  min-width: 70px;
+}
+
+.dashboard_list {
+  font-size: 13px;
+}
+
+.dashboard_list:nth-child(odd) {
+  background-color: #F2F3F5;
+}
+
+
+.dashboard_list td {
+  padding: 10px;
+}
+
+
+
+/* report/new =============================== */
+
+.right_dashboard h3 {
+  padding-top: 10px;
+  margin-left: 50px;
+}
+
+.report_form_list {
+  margin-top: 20px;
+  background-color: white;
+  margin-right: 50px;
+  margin-left: 50px;
+  min-height: 100px;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0 0 1px gray;
+}
+
+.report_title {
+  border-radius: 5px 5px 0 0;
+  color: white;
+  padding: 8px 0 ;
+  font-size: 13px;
+  font-weight: normal;
+  background: linear-gradient(-135deg,#A3C5DA,#70AAC8,#A3C5DA);
+}
+
+.report_title h4 {
+  margin-left: 20px;
+}
+
+
+
+.report_area {
+  display: flex;
+  margin: 30px;
+}
+
+.report_left_area {
+  padding-top: 10px;
+  line-height: 20px;
+  display: flex;
+  width: 30%;
+  min-width: 200px;
+}
+
+.report_left_area p {
+  font-size: 13px;
+}
+
+.report_left_area span {
+  font-size: 11px;
+  padding: 0 2px;
+  border-radius: 5px;
+  border: 1px solid #ffd700;
+  color: white;
+  margin-left: 10px;
+  height: 16px;
+  background-color: #ffd700;
+}
+
+.report_form_field {
+  width: 70%;
+  min-height: 40px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 1px gray;
+  padding: 10px;
+  color: gray;
+  font-size: 12px;
+}
+
+.report_form_field:focus {
+  outline: solid 3px #A3C5DA;
+}
+
+input[type="select"]:focus {
+  outline: solid 3px #A3C5DA ;
+}
+
+
+input[type="text"]:focus {
+  outline: solid 3px #A3C5DA ;
+}
+
+.date_time {
+  width: 70%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 1px gray;
+  padding: 10px;
+  color: gray;
+    }
+    
+.date_time:focus {
+  outline: solid 3px #A3C5DA ;
+}
+    
+.form_bottom_area {
+  margin: 50px;
+}
+
+.form_bottom {
+  padding: 20px 30px;
+  border-radius: 5px;
+  color: white;
+  background-color: #A3C5DA;
+  cursor: pointer;
+}
+
+/* create　送信完了ビュー =============================== */
+
+.contents_center {
+  margin-top: 200px;
+  text-align: center; 
+}
+
+/* ログイン後判定ビュー =============================== */
+
+.contents_center_box {
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+}
+
+/* form css ================================ */
+
+.form_box {
+  margin-right: auto;
+  margin-left: auto;
+  width: 30%;
+  min-width: 500px;
+  background-color :white;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  outline: solid 3px #A3C5DA ;
+}
+
+input[type="email"]:focus {
+  outline: solid 3px #A3C5DA ;
+}
+
+input[type="password"]:focus {
+  outline: solid 3px #A3C5DA ;
+}
+
+
+form input[type="submit"].form_bottom {
+  background-color: #A3C5DA;
+  border-radius: 5px;
+  border: 1px solid ;
+  color: #fff;
+  font-size: 18px;
+  width: 25%;
+  min-width: 220px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #afd7f0;
+}
+
+
+/* report/show =============================== */
+
+.datetime_kara {
+  color: gray;
+}
+
+.image {
+  height: 100px;
+  width: 200px;
+}

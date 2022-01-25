@@ -1,0 +1,165 @@
+
+<div class="dashboard_index">
+ 
+ <% unless current_user.full_profile? %>
+  <div class="contents_center_box">
+    <h2>まずは、あなたの基本情報を登録しましょう！</h2>
+    <p>WORKS REPORTは、現場のムダをなくすためのサービスです！</p>
+    <%= link_to "基本情報を登録する", edit_user_path(current_user), { class: "btn_link" } %>
+  </div>
+ <% else %>
+
+ 
+ <!-- 左側リストビュー-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+      <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/buildings',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+    
+   
+  </div>
+   <!-- 左側リストビュー終了-->
+   
+ 
+ <div class="right_dashboard_index">
+  
+  <div class="status_title"> 
+    <h3>申請一覧</h3>
+   </div>
+    
+  <div class="dashboard_status approval">
+   
+   
+   <table class="dd_index_table">
+
+     <tr class="dashboard_bar">
+       <th class="dashboard_bar_1">申請日</th>
+       <th class="dashboard_bar_2">申請会社名</th>
+       <th class="dashboard_bar_3">タイトル</th>
+       <th class="dashboard_bar_4">申請先物件名</th>
+       <th class="dashboard_bar_5">作業日時</th>
+       <th class="dashboard_bar_6">ステータス</th>
+       <th class="dashboard_bar_7">備考</th>
+     </tr>
+   
+   <% @report.each do |report| %>
+  
+     <tr class="dashboard_list">
+       <td><%= report.created_at.strftime('%Y/%m/%d') %></td>
+       <td><%= report.report_c %></td>
+       <td><%= report.subject %></td>
+       <td><%= report.report_c_property %></td>
+       <td><%= report.working_date&.strftime('%Y/%m/%d') %></td>
+       <td><%= report.status %></td>
+       <td><%= link_to "詳細",report_path(report.id), method: :get, class: :a_decoration_line %></td>
+     </tr>
+   <% end %>
+   </table>
+   <%= paginate @report, :param_name => 'report_page' %>
+  </div>
+  
+  <div class="status_title_2"> 
+    <h3>回線申請一覧</h3>
+   </div>
+    
+  <div class="dashboard_status approval">
+   
+   
+   <table class="dd_index_table">
+
+     <tr class="dashboard_bar">
+       <th class="dashboard_bar_1">申請日</th>
+       <th class="dashboard_bar_2">契約者名</th>
+       <th class="dashboard_bar_3">申込回線種別</th>
+       <th class="dashboard_bar_4">申請先物件名</th>
+       <th class="dashboard_bar_5">開通希望日</th>
+       <th class="dashboard_bar_6">ステータス</th>
+       <th class="dashboard_bar_7">備考</th>
+     </tr>
+  
+    <% @lineform_where.each do |line| %>
+  
+     <tr class="dashboard_list">
+       <td><%= line.created_at.strftime('%Y/%m/%d') %></td>
+       <td><%= line.contractor_name %></td>
+       <td><%= line.line_plan %></td>
+       <td><%= line.location_property %></td>
+       <td><%= line.hope_to_open&.strftime('%Y/%m/%d') %></td>
+       <td><%= line.line_status %></td>
+       <td><%= link_to "詳細",lineform_path(line.id), method: :get, class: :a_decoration_line %></td>
+     </tr>
+   <% end %>
+   
+   </table>
+   <%= paginate @lineform_where, :param_name => 'lineform_page' %>
+  
+  </div>
+  
+ </div>
+
+</div>
+
+<% end %>

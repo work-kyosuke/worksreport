@@ -1,0 +1,175 @@
+<div class="dashboard_users">
+ 
+ 
+ <!-- 左側リストビュー　-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+      <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+  </div>
+
+
+ <div class="right_dashboard_users">
+    <h3>ユーザー情報修正</h3>
+    
+    <%= form_for current_user do |f| %>
+    
+    <div class="users_show">
+    
+    
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">ユーザー名</p>
+          </div>
+        <div class="user_show_text">
+         <%= current_user.name %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">メールアドレス</p>
+          </div>
+        <div class="user_show_text_edit">
+          <%= f.email_field :email, placeholder: @email, class: "form-edit" %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">ユーザータイプ</p>
+          </div>
+        <div class="user_show_text">
+         <%= current_user.user_type %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社名</p>
+          </div>
+        <div class="user_show_text_edit">
+         <%= f.text_field :company, placeholder: @company , class: "form-edit" %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社郵便番号</p>
+          </div>
+        <div class="user_show_text_edit">
+         <%= f.text_field :c_postal, placeholder: @c_postal, class: "form-edit" %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社住所</p>
+          </div>
+        <div class="user_show_text_edit">
+         <%= f.text_field :c_address, placeholder: @company_address, class: "form-edit" %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">建物名</p>
+          </div>
+        <div class="user_show_text_edit">
+         <%= f.text_field :c_building, placeholder: @c_building, class: "form-edit" %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">階・号数</p>
+          </div>
+        <div class="user_show_text_edit">
+         <%= f.text_field :c_floor, placeholder: @c_floor, class: "form-edit" %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社電話番号</p>
+          </div>
+        <div class="user_show_text_edit">
+         <%= f.text_field :c_p_number, placeholder: @company_p_number, class: "form-edit" %>
+        </div>
+      </div>
+      
+     
+  </div>
+  
+   <div class="profile_edit_input">
+      <%= f.submit "変更内容保存", class: "btn" %>
+   </div>
+   
+   <% end %>
+    
+</div>
+</div>
+</div>

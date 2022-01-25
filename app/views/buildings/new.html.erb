@@ -1,0 +1,73 @@
+<!-- 左側リストビュー　-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+     <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+  </div>
+   <!-- 左側リストビュー終了　-->
+ <div class=“right_dashboard”>
+   <h3>物件を新規登録</h3>
+ </div>
+ 

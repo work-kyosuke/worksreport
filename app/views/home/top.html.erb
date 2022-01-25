@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WorksReport</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+ <body>
+   
+   
+
+ <section class="products">
+     
+      <div class="products_title title">
+    <h1>オフィスビルに関わる人々を幸せにする、新しい仕組み</h1>
+  </div>
+     
+
+   <div class="products_1">
+     <div class="products_1_left">
+       <%= image_tag('/MacBook Pro 16-inch (1).png',class: 'products_image')%>
+     </div>
+     <div class="products_1_right">
+       <img src="worksReport_blue.png" alt="worksreport" width="509px" height="126px">
+       <%= link_to "ログイン", new_user_session_path, class: "products_1_right_link" %>
+       <%= link_to "無料で試してみる", new_user_registration_path, class: "products_1_right_link" %>
+     </div>
+     
+   </div>
+
+
+  </section>
+  
+  <section class="section_2">
+     <div class="products_meesage">
+       <h1>「WORKS REPORT」とは</h1>
+       <p>
+          ワークスレポートでは、オフィスビルの「いつ」「どこで」「誰が」「何をしたか」という<br>
+          今まで管理されてこなかった情報を、簡単にクラウド管理できる仕組みを無料で提供。<br>
+          急な現場対応や非効率な施工前の準備・申請などの事務処理の手間をなくすことで、<br>
+          現場のムダをカイゼンします。
+          
+       </p>
+     </div>
+     
+     <div class="products_detail_main">
+      <div class="products_detail_left">
+       <div class="products_detail_left_title"><h3>ビルオーナー・管理会社</h3></div>
+        <div class="products_detail_item">
+         <div class="item_box_1 box_detail">
+          <div class="box_detail_image">
+           <%= image_tag('/remote_human.png',class: 'icon_image_1')%>
+          </div>
+           <h3>現場立ち合いを不要に</h3>
+           <p>現場調査や回線工事等のムダな立ち合いをなくし、必要な場合も代行します</p>
+         </div>
+         <div class="item_box_2 box_detail">
+          <div class="box_detail_image">
+           <%= image_tag('/admin_human_2.png',class: 'icon_image_2')%>
+          </div>
+           <h3>問合せに的確に対応</h3>
+           <p>今まで回答に困っていた、オフィスビルの設備情報がすべてここに</p>
+         </div>
+        </div>
+      </div>
+     </div>
+     
+     <div class="products_detail_main">
+      <div class="products_detail_right">
+       <div class="products_detail_right_title"><h3>入居テナント・施工会社</h3></div>
+        <div class="products_detail_item">
+         <div class="item_box_3 box_detail">
+          <div class="box_detail_image">
+           <%= image_tag('/pc_human_1.png',class: 'icon_image_3')%>
+          </div>
+           <h3>工事・申請はWEB完結</h3>
+           <p>もう、紙やExcel・FAXでの申請は必要ありません。当然印鑑も必要ありません</p>
+         </div>
+         <div class="item_box_4 box_detail">
+          <div class="box_detail_image">
+           <%= image_tag('/sekou_human.png',class: 'icon_image_4')%>
+          </div>
+           <h3>施工準備の効率化</h3>
+           <p>過去の施工履歴や設備情報を確認しスムーズな施工が可能</p>
+         </div>
+        </div>
+      </div>
+     </div>
+
+  </section>
+ 
+ 
+  <section class="section_3">
+     <div class="section_3_meesage">
+       <h1>特徴</h1>
+       <p>feature</p>
+     </div>
+     
+     <div class="products_feature_main">
+      
+      <div class="feature_box">
+       <%= image_tag('/0en_180x212.png',class: 'icon_image_5')%>
+       <h3>導入費・利用料ともに0円</h3>
+       <p>オーナー・管理会社でお困りの方は、クラウド業務改革サービス「WORKS REPORT」を無料でご利用可能です。それ以外のユーザーも基本サービスはすべて無料でご利用可能！</p>
+      </div>
+      
+      <div class="feature_box">
+       <%= image_tag('/time_180x212.png',class: 'icon_image_5')%>
+       <h3>業務効率アップ</h3>
+       <p>導入したビルの申請関連をここに集約することで、管理会社側が主導となり
+          回線工事のスケジュールや、施工段取りをコントロールすることが可能です。
+          急遽の現場対応などがなくなり、余裕のあるスケジュール調整が可能になります。
+          入居テナントや施工会社も申請の為に、紙の印刷や資料作成が不要になり、
+          本来の業務に集中することが可能です！</p>
+      </div>
+      
+      <div class="feature_box">
+       <%= image_tag('/costo_down_180x212.png',class: 'icon_image_5')%>
+       <h3>大幅なコスト削減</h3>
+       <p>無駄な時間を削減し、現場対応時間を短縮することで、 交通費や労働時間など、大幅な費用削減を実現！
+       </p>
+      </div>
+      
+     </div>
+     
+     <div class="inquiry">
+   <div class="inquiry_main">
+    <h1>導入にあたり、費用も契約書も必要ありません</h1>
+    <%= link_to "まずは詳細を聞いてみる", "https://docs.google.com/forms/d/e/1FAIpQLSfQmk2jBuGGlHvblYPmp4UqMcuh50ErLjlFJ71kpTeldmWjpQ/viewform",target: :_blank,class: "bottom_top" %>
+   </div>
+  </div>
+
+  </section>
+  
+  
+ 
+ 
+   <footer>
+    <div class="footer_right">
+      <%= link_to "運営会社", "https://weak.co.jp/company",target: :_blank %>
+      <%= link_to "プライバシーポリシー", "https://weak.co.jp/privacy_policy",target: :_blank %>
+      <span>©Weak,Inc.</span>
+    </div>
+  </footer>
+  
+   <%= yield %>
+  </body>
+</html>

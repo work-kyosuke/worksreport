@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Worksreport</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+  </head>
+
+  <body>
+  
+  
+  
+  <header>
+    <div class="header-logo">
+        <%= link_to image_tag('/worksReport_blue.png',class: 'logo_image'), "/dashboard" %>
+    </div>
+    
+    <div class="header_right">
+          <% if user_signed_in? %>
+        <div class="header_menus">
+          <%= link_to current_user.user_type ,'#', class: "post" %>
+          <%= link_to current_user.name, user_path(current_user), class: "post" %>
+          <%= link_to '運営会社', 'https://weak.co.jp/company',target: :_blank, rel: "noopener noreferrer",class: 'link_box leftend'%>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          
+          <% else %>
+          <% end %>
+        </div>
+    </div>
+  </header> 
+    
+    
+    
+    <%= yield %>
+  </body>
+</html>

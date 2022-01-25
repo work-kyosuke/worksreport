@@ -1,0 +1,317 @@
+<div class="dashboard_users">
+ 
+ 
+ <!-- 左側リストビュー-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+     <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+  </div>
+   
+   
+  <div class="right_dashboard">
+   <h3>回線申請内容詳細</h3>
+   
+   <div class="report_form_list">
+    <div class="report_title">
+     <h4>基本情報</h4>
+    </div>
+    
+    <div class="report_form_contenaer">
+     
+      <div class="report_area">
+        <div class="report_left_area">
+          <p class="report_sub">申請日</p>
+         
+        </div class="report_show_time">
+        <div class="report_form_field">
+          <%= @lineform&.created_at.strftime('%Y/%m/%d') %>
+        </div>
+      </div>
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">申請回線名</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.line_plan %>
+          </div>
+      </div>
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">回線備考</p>
+       </div>
+       <div class="report_form_field">
+         <%= @lineform.line_others %>
+       </div>
+      </div>
+      
+      <div class="report_area">
+        <div class="report_left_area">
+          <p class="report_sub">開通希望日</p>
+         
+        </div class="report_show_time">
+        <div class="report_form_field">
+          <%= @lineform&.hope_to_open.strftime('%Y/%m/%d') %>
+        </div>
+      </div>
+   </div>
+  </div>
+   
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>契約者情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+     
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">契約者名</p>
+       </div>
+         <div class="report_form_field">
+         <%= @lineform.contractor_name %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">契約者名(フリガナ)</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.contractor_furigana %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">設置場所(郵便番号)</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.postal_code %>
+         </div>
+      </div>
+      
+       <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">設置場所(都道府県)</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.location_prefectures %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">設置場所(住所)</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.location_address %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">設置場所(建物名)</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.location_property %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">設置場所(階・号数)</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.location_floor %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">契約者電話番号</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @lineform.contractor_p_number %>
+         </div>
+      </div>
+      
+     </div>
+   </div>
+      
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>申込ご担当者様情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">担当者名(姓)</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.manager_surname %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">担当者名(名)</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.manager_name %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">担当者名(姓フリガナ)</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.manager_surname_kana %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">担当者名(名フリガナ)</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.manager_name_kana %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">担当者(email)</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.manager_email %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">担当者(電話番号)</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.manager_number %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">契約者との続柄</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @lineform.contractor_relations %>
+          </div>
+      </div>
+      
+       <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">確認書類</p>
+           
+       </div>
+           <div class="report_form_image">
+           <% if @lineform.pdf_file.attached? %>
+           <%= link_to "PDFダウンロードリンク", rails_blob_path(@lineform.pdf_file),target: :_blank, rel: "noopener noreferrer",class: :a_decoration_line %>
+           <% end %>
+           </div>
+      </div>
+      
+      </div>
+     </div>
+      
+   
+   
+   
+   <div class="form_bottom_area">
+     <%= link_to '入力内容を編集する', edit_lineform_path(@lineform.id),class: :form_bottom %>
+   </div>
+ 
+ </div>
+    
+</div>

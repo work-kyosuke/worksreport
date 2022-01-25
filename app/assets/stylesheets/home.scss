@@ -1,0 +1,371 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* index prodct ================================ */
+
+.products_image {
+  width: 550px;
+  height: 533px;
+}
+
+.products_title {
+  padding-top: 150px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+
+
+/* products 2page ================================ */
+
+.products {
+  height: 600px; 
+  width: 100%;
+}
+
+.section_2 {
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #F9F9F9;
+}
+
+.products_1 {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.products_meesage h1 {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 35px;
+  color: rgba(0,0,0,.7);
+}
+
+.products_meesage p {
+  margin-top: 20px;
+  text-align: center;
+  color: rgba(0,0,0,.5);
+  font-size: 14px;
+}
+
+.products_detail_main {
+  margin: 0 20px;
+  margin-top: 70px;
+}
+
+.products_detail_item {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  margin: 20px 20px;
+}
+
+
+.box_detail {
+  height: 400px;
+  margin: 10px 10px;
+  background-color: white;
+  box-shadow: 0 0 4px #E6E6E6;
+  width: 50%;
+  padding: 10px;
+  position: relative;
+}
+
+.box_detail_image {
+  height: 250px; 
+}
+
+
+.box_detail h3 {
+  text-align: center;
+  color: rgba(0,0,0,.7); 
+  font-size: 14px;
+}
+
+
+.box_detail p {
+  color: rgba(0,0,0,.4); 
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.icon_image_1 {
+  width: 300px;
+  height: 300px;
+  margin: -15px;
+}
+
+.icon_image_2 {
+  width: 250px;
+  height: 250px;
+  margin-top: 10px;
+}
+
+.icon_image_3 {
+  width: 200px;
+  height: 200px;
+  margin-top: 30px;
+}
+
+.icon_image_4 {
+  margin-top: 30px;
+  width: 220px;
+  height: 220px;
+}
+
+
+/* products left ================================ */
+
+.products_detail_left_title {
+  text-align: center;
+  color: rgba(0,0,0,.7);
+}
+
+.products_detail_left {
+  width: 50%;
+  float: left;
+}
+
+/* products right ================================ */
+
+.products_detail_right_title {
+  text-align: center;
+  color: rgba(0,0,0,.7);
+}
+
+.products_detail_right {
+  width: 50%;
+  float: right;
+}
+
+.products {
+  height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+/* products 1page ================================ */
+
+
+.products_1_left {
+  float: left;
+  padding-left: 150px;
+}
+
+.products_1_right {
+  padding-right: 100px;
+  padding-top: 200px;
+  text-align: center;
+}
+
+.products_1_right_link {
+  font-weight: bold;
+  margin: 15px;
+  font-size:0.75em;
+  display:inline-block;
+  width:200px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align: center;
+  border: 2px solid #aaaaaa;
+  border-radius: 5px;/*角の丸み*/
+}
+
+.products_1_right_link:hover {
+  background: linear-gradient(-135deg,#A3C5DA,#70AAC8,#A3C5DA);
+  color: white;
+  border: none;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+/*　プロダクト説明2 ================================ */
+
+
+
+.products_2 {
+  display:flex;
+  padding-top: 50px;
+}
+
+
+
+
+.before_item_right {
+  padding-top: 40px;
+  text-align: center;
+  width: 50%;
+  margin: 40px;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;/*角の丸み*/
+}
+
+
+.before_item_right p {
+  
+}
+
+.after_item_left {
+  padding-top: 40px;
+  text-align: center;
+  width: 50%;
+  margin: 40px;
+  border: 1px solid #A3C5DA;
+  border-radius: 5px;/*角の丸み*/
+}
+
+.after_item_left p {
+  padding-top: 5px;
+}
+
+
+.after_item_right {
+  padding-top: 40px;
+  text-align: center;
+  width: 50%;
+  margin: 40px;
+  border: 1px solid #A3C5DA;
+  border-radius: 5px;/*角の丸み*/
+}
+
+.after_item_right p {
+  padding-top: 15px;
+}
+
+/*　3ページ目 ================================ */
+
+.section_3 {
+  height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.section_3_meesage h1 {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 35px;
+  color: rgba(0,0,0,.7);
+}
+
+.section_3_meesage p {
+  text-align: center;
+  color: rgba(0,0,0,.5);
+  font-size: 14px;
+}
+
+.products_feature_main {
+  display: flex;
+  justify-content: center; 
+}
+
+.feature_box {
+  padding: 0 60px;
+  margin: 20px;
+  width: 25%;
+  height: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.number_image_5 {
+  padding: 20px;
+  top: 100px;
+}
+
+.feature_box h3 {
+  color: rgba(0,0,0,.7);
+}
+
+.feature_box p {
+  font-size: 13px;
+  margin-top: 20px;
+  color: rgba(0,0,0,.5); 
+}
+
+
+.inquiry {
+  margin-bottom: 100px;
+}
+
+.inquiry_main {
+  background: linear-gradient(-135deg,#A3C5DA,#70AAC8,#A3C5DA);
+  width: 75%;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+}
+
+.inquiry_main h1 {
+  margin-top: 50px;
+  margin-left: 30px;
+  
+}
+
+.inquiry_main a {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 55px;
+  margin-left: 100px;
+  color: rgba(0,0,0,.7);
+  background-color: white;
+  border-radius: 20px;
+  height: 40px;
+  padding: 10px 30px;
+}
+
+
+
+/* フッター ================================ */
+
+footer {
+  height: 200px;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 50px;
+  background-color: #444444;
+  color: white;
+}
+
+span {
+  line-height: 1.33;
+  font-size: 12px;
+  color: white;
+}
+
+.footer_right {
+  padding-top: 30px;
+  float: right;
+}
+
+.footer_list li {
+  padding-top: 10px;
+  line-height: 1.33;
+  font-size: 12px;
+}
+
+.footer_right a {
+  color: white;
+  line-height: 1.33;
+  font-size: 12px;
+  padding-right: 20px;
+}
+
+/* フラッシュ ================================ */
+.flash {
+  padding: 5px 0;
+  color: white;
+  background: rgb(251, 170, 88);
+  text-align: center;
+  position: absolute;
+  top: 80px;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 14px;
+}

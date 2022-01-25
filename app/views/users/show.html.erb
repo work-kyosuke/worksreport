@@ -1,0 +1,169 @@
+<div class="dashboard_users">
+ 
+ 
+ <!-- 左側リストビュー　-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+     <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+  </div>
+   
+  <div class="right_dashboard_users">
+    <h3>ユーザー情報詳細</h3>
+    <div class="users_show">
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">ユーザー名</p>
+          </div>
+        <div class="user_show_text">
+         <%= @name %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">メールアドレス</p>
+          </div>
+        <div class="user_show_text">
+         <%= @email %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">ユーザータイプ</p>
+          </div>
+        <div class="user_show_text">
+         <%= @type %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社名</p>
+          </div>
+        <div class="user_show_text">
+         <%= @company %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社郵便番号</p>
+          </div>
+        <div class="user_show_text">
+         <%= @company_postal %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社住所</p>
+          </div>
+        <div class="user_show_text">
+         <%= @company_address %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">建物名</p>
+          </div>
+        <div class="user_show_text">
+         <%= @c_building %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">階・号数</p>
+          </div>
+        <div class="user_show_text">
+         <%= @c_floor %>
+        </div>
+      </div>
+      
+      <div class="user_show_area">
+          <div class="user_show_left">
+            <p class="user_show_sub">会社電話番号</p>
+          </div>
+        <div class="user_show_text">
+         <%= @company_p_number %>
+        </div>
+      </div>
+      
+     
+  </div>
+  
+   
+   <% if current_user.id == @user.id %>
+      <div class="profile_edit">
+        <%= link_to "プロフィール編集", edit_user_path(current_user),class: :form_bottom %>
+      </div>
+    <% end %>
+</div>
+    
+</div>

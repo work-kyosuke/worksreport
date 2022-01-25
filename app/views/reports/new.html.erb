@@ -1,0 +1,343 @@
+
+<div class="dashboard">
+
+ 
+ <!-- 左側リストビュー　-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+      <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+  </div>
+
+  
+   <!-- 左側リストビュー終了　-->
+ 
+ <div class="right_dashboard">
+   <h3>新規施工申請</h3>
+   
+   <%= form_with(model: @report, local: true) do |form| %>
+   
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>入居テナント様情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+     
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_c, placeholder: "例　株式会社Weak",class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">郵便番号</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_c_postal, placeholder: "111-1111",class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社住所</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_c_address, placeholder: "東京都渋谷区恵比寿1-2-3",class: "report_form_field" %>
+      </div>
+      
+       <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">物件名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_c_property, placeholder: "日本ビル",class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">入居フロア</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_c_floor, placeholder: "2F",class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社電話番号</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_c_number, placeholder: "03-1234-5678",class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">ご担当者様名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_mg ,class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">メールアドレス</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :report_mg_email, placeholder: "ご担当者様の受信可能なメールアドレスをご記載ください",class: "report_form_field" %>
+      </div>
+      
+      
+     </div>
+   </div>
+ 
+ 
+   <div class="report_form_list">
+    <div class="report_title">
+     <h4>作業基本情報</h4>
+    </div>
+    
+    <div class="report_form_contenaer">
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">件名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :subject, placeholder: "例　回線引き込み前現場調査",class: "report_form_field" %>
+      </div>
+    
+  
+   
+   <div class="report_area">
+      <div class="report_left_area">
+        <p class="report_sub">作業区分</p>
+        <span>必須</span>
+      </div>
+        <%= form.select :work_class, {
+        "工事": "工事",
+        "現場調査": "現場調査",
+        "メンテナンス": "メンテナンス",
+        "その他": "その他"},
+        { include_blank: '選択してください'},
+        { class: 'report_form_field' } %>
+   </div>
+   
+   <div class="report_area">
+     <div class="report_left_area">
+        <p class="report_sub">作業日時(開始)</p>
+        <span>必須</span>
+     </div>
+        <%= form.datetime_field :working_date, value: Date.tomorrow.strftime("%Y-%m-%d") ,class: "date_time" %>
+   </div>
+    
+   <div class="report_area">
+      <div class="report_left_area">
+        <p class="report_sub">作業日時(終了)</p>
+        <span>必須</span>
+      </div>
+        <%= form.datetime_field :working_date_end,class: "date_time" %>
+   </div>
+   
+   <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">作業内容詳細</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_area :work_content,class: "report_form_field" %>
+   </div>
+   
+   <div class="report_area">
+      <div class="report_left_area">
+        <p class="report_sub">作業場所</p>
+        <span>必須</span>
+      </div>
+         <%= form.select :work_place, {
+        "テナント内": "テナント内",
+        "共用部": "共用部",
+        "その他": "その他"},
+        { include_blank: '選択してください'},
+        { class: 'report_form_field'  } %>
+   </div>
+   
+   <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">作業場所詳細</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_area :work_place_detail,class: "report_form_field" %>
+   </div>
+   
+   </div>
+  </div>
+  
+  
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>元請け（施工）会社情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c, placeholder: "例　株式会社Weak", class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社郵便番号</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c_postal, placeholder: "222-2222", class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社住所</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c_address, placeholder: "東京都渋谷区2-22-17", class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">建物名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c_property, placeholder: "岩波ビル", class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">フロアまたは号数</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c_floor, placeholder: "4F", class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社電話番号</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c_number, class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">元請責任者名</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :prime_c_person, class: "report_form_field" %>
+      </div>
+      
+     </div>
+   </div>
+  
+  
+  <div class="report_form_list">
+     <div class="report_title">
+       <h4>その他</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">備考</p>
+          <span>必須</span>
+       </div>
+          <%= form.text_field :others, placeholder: "その他事前共有の必要な内容があればこちらに御記載ください", class: "report_form_field" %>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">添付ファイル(PDFファイルのみ)</p>
+       </div>
+          <%= form.file_field :pdf_file, class: "report_form_file" %>
+      </div>
+  
+      
+     </div>
+  </div>
+   
+   
+   
+    <div class="form_bottom_area">
+     <%= form.submit 'この内容で申請する',class:"form_bottom" %>
+
+<% end %>
+  
+   </div>
+ 
+ 
+ </div>

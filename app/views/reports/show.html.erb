@@ -1,0 +1,371 @@
+<div class="dashboard_users">
+ 
+ 
+ <!-- 左側リストビュー-->
+   <div class="left_dashboard">
+    <div class="left_dashboard_list">
+     <ul>
+     <% if User.exists?(user_type: '管理者') %>
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_bill40x40px.png',class: 'dashboard_icon')%>
+        <span>管理物件一覧</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/report/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_user40x40px.png',class: 'dashboard_icon')%>
+        <span>登録テナント一覧</span>
+       </li>
+      <% end %>
+      <% else %>
+      
+      <%= link_to '/dashboard',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_home40x40.png',class: 'dashboard_icon')%>
+        <span>ホーム</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/reports/new',class: 'link_box' do %>
+       <li class="current">
+        <%= image_tag('/icon_sekou40x40px+.png',class: 'dashboard_icon')%>
+        <span>新規工事申請</span>
+       </li>
+      <% end %>
+      
+      <%= link_to '/lineforms/new',class: 'link_box' do %>
+       <li>
+        <%= image_tag('/icon_application40x40px.png',class: 'dashboard_icon')%>
+        <span>新規回線申込</span>
+       </li>
+      <% end %>
+      
+      <% end %>
+      
+     
+    </ul>
+   </div>
+  </div>
+   
+   
+  <div class="right_dashboard">
+   <h3>施工申請内容詳細</h3>
+   
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>入居テナント様情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+     
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社名</p>
+       </div>
+         <div class="report_form_field">
+         <%= @report.report_c %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">郵便番号</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.report_c_postal %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社住所</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.report_c_address %>
+         </div>
+      </div>
+      
+       <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">物件名</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.report_c_property %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">入居フロア</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.report_c_floor %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社電話番号</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.report_c_number %>
+         </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">ご担当者様名</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @report.report_mg %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">メールアドレス</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @report.report_mg_email %>
+          </div>
+      </div>
+      
+      
+     </div>
+   </div>
+ 
+ 
+   <div class="report_form_list">
+    <div class="report_title">
+     <h4>作業基本情報</h4>
+    </div>
+    
+    <div class="report_form_contenaer">
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">件名</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @report.subject %>
+          </div>
+      </div>
+    
+  
+   
+   <div class="report_area">
+      <div class="report_left_area">
+        <p class="report_sub">作業区分</p>
+         
+      </div>
+        <div class="report_form_field">
+         <%= @report.work_class %>
+        </div>
+   </div>
+   
+   <div class="report_area">
+     <div class="report_left_area">
+        <p class="report_sub">作業日時</p>
+         
+     </div class="report_show_time">
+        <div class="report_form_field">
+         <%= @report&.working_date&.strftime('%Y/%m/%d %-H:%M') %>
+         <span class="datetime_kara">〜</span>
+         <%= @report.working_date_end&.strftime('%Y/%m/%d %-H:%M') %>
+        </div>
+        
+        
+   </div>
+    
+   
+   <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">作業内容詳細</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.work_content %>
+        </div>
+   </div>
+   
+   <div class="report_area">
+      <div class="report_left_area">
+        <p class="report_sub">作業場所</p>
+         
+      </div>
+         <div class="report_form_field">
+         <%= @report.work_place %>
+        </div>
+   </div>
+   
+   <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">作業場所詳細</p>
+           
+       </div>
+          <div class="report_form_field">
+         <%= @report.work_place_detail%>
+        </div>
+   </div>
+   
+   </div>
+  </div>
+  
+  
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>元請け（施工）会社情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社名</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @report.prime_c %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社郵便番号</p>
+           
+       </div>
+          <div class="report_form_field">
+           <%= @report.prime_c_postal %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社住所</p>
+           
+       </div>
+           <div class="report_form_field">
+           <%= @report.prime_c_address %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">建物名</p>
+           
+       </div>
+           <div class="report_form_field">
+           <%= @report.prime_c_property %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">フロアまたは号数</p>
+           
+       </div>
+           <div class="report_form_field">
+           <%= @report.prime_c_floor %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">会社電話番号</p>
+           
+       </div>
+           <div class="report_form_field">
+           <%= @report.prime_c_number %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">元請責任者名</p>
+           
+       </div>
+           <div class="report_form_field">
+           <%= @report.prime_c_person %>
+          </div>
+      </div>
+      
+     </div>
+   </div>
+  
+  
+  <div class="report_form_list">
+     <div class="report_title">
+       <h4>その他</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+    
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">備考</p>
+           
+       </div>
+           <div class="report_form_field">
+           <%= @report.others %>
+          </div>
+      </div>
+      
+      <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">添付ファイル</p>
+           
+       </div>
+           <div class="report_form_image">
+           <% if @report.pdf_file.attached? %>
+           <%= link_to "PDFダウンロードリンク", rails_blob_path(@report.pdf_file),target: :_blank, rel: "noopener noreferrer",class: :a_decoration_line %>
+           <% end %>
+           </div>
+      </div>
+     
+      
+     </div>
+  </div>
+   
+   
+   
+    <div class="form_bottom_area">
+     <%= link_to '入力内容を編集する', edit_report_path(@report.id),class: :form_bottom %>
+   </div>
+ 
+ 
+ </div>
+    
+</div>
