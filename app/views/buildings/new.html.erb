@@ -67,6 +67,32 @@
    </div>
   </div>
    <!-- 左側リストビュー終了　-->
+   <%= form_with(model: @building, local: true) do |form| %>
+   
+   <div class="report_form_list">
+     <div class="report_title">
+       <h4>物件情報</h4>
+     </div>
+     
+     <div class="report_form_contenaer">
+         
+     <div class="report_area">
+       <div class="report_left_area">
+          <p class="report_sub">回線備考</p>
+       </div>
+          <%= form.text_field :line_others, placeholder: "電話機能も利用したい 等",class: "report_form_field" %>
+     </div>
+     
+     <div class="report_area">
+     <div class="report_left_area">
+        <p class="report_sub">開通希望日</p>
+        <span>必須</span>
+     </div>
+        <%= form.date_field :hope_to_open ,class: "date_time" %>
+     </div>
+      
+    </div>
+   </div>
  <div class=“right_dashboard”>
    <h3>物件を新規登録</h3>
  </div>
